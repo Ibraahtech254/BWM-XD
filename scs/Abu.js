@@ -149,11 +149,18 @@ zokou(_0xa6b924, async (_0x5027b0, _0x28cb97, _0x436fb8) => {
     const _0x3b72aa = JavaScriptObfuscator.obfuscate(_0x2e0847, _0xf7cbe1);
     const _0xfffc63 = _0x3b72aa.getObfuscatedCode();
     const _0x144a96 = [{
-      'name': "cta_copy",
-      'buttonParamsJson': JSON.stringify({
-        'display_text': "COPY CODE",
-        'id': "copy_code",
-        'copy_code': _0xfffc63
+      name: 'quick_reply',
+                  buttonParamsJson: JSON.stringify({
+                    display_text: "⏳ PING",
+                    id: ".ping",
+                  }),
+                },
+      {
+        name: 'cta_url',
+                  buttonParamsJson: JSON.stringify({
+                    display_text: "📽 HOW TO DEPLOY",
+                    url: 'https://ibrahim-adams.vercel.app/Deploy.html',
+                  
       })
     }];
     const _0x520e1a = {
