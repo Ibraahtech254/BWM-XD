@@ -46,8 +46,9 @@ const date = moment().format('DD/MM/YYYY');
             deviceListMetadata: {},
             deviceListMetadataVersion: 2,
             },
-            footer: proto.Message.InteractiveMessage.Footer.create({
-              text: '*© Ibrahim Adams*',
+          interactiveMessage: proto.Message.InteractiveMessage.create({
+            body: proto.Message.InteractiveMessage.Body.create({
+              
             }),
             nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.create({
               buttons: [
