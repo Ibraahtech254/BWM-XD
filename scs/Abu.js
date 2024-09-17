@@ -83,11 +83,12 @@ const date = moment().format('DD/MM/YYYY');
           }),
         },
       },
-    }, 
+   };
+  });
     
     
             
                 
     
-         });
+         
       
