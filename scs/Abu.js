@@ -9,21 +9,19 @@ const {
 const axios = require("axios");
 
 const searchRepo = async (m, zk, repoUrl) => {
-  const prefixMatch = m.body.match(/^[\\/!#.]/);
-  const prefix = prefixMatch ? prefixMatch[0] : '/';
-  const cmd = m.body.startsWith(prefix) ? m.body.slice(prefix.length).split(' ')[0].toLowerCase() : '';
-
-  const validCommands = ['re', 's', 'scrip'];
+  adams({
+  'nomCom': "rep",
+  'reaction': '📂',
 
   if (validCommands.includes(cmd)) {
     const repoUrl = `https://api.github.com/repos/devibraah/BWM-XMD`;
     
-    await handleRepoCommand(m, zk, repoUrl);
+    await (m, zk, repoUrl);
   }
 };
 
 
-const handleRepoCommand = async (m, zk, repoUrl) => {
+}, async  (m, zk, repoUrl) => {
   try {
     const response = await axios.get(repoUrl);
     const repoData = response.data;
