@@ -1,13 +1,14 @@
-import pkg, { prepareWAMessageMedia } from '@whiskeysockets/baileys';
+const pkg, { prepareWAMessageMedia } require '@whiskeysockets/baileys';
 const { generateWAMessageFromContent, proto } = pkg;
-import axios from 'axios';
+const axios = require("axios");
 
-const searchRepo = async (m, Matrix) => {
+const { repondre, ms, arg, nomAuteurMessage } = commandeOptions;
+
   const prefixMatch = m.body.match(/^[\\/!#.]/);
   const prefix = prefixMatch ? prefixMatch[0] : '/';
   const cmd = m.body.startsWith(prefix) ? m.body.slice(prefix.length).split(' ')[0].toLowerCase() : '';
 
-  const validCommands = ['repo', 'sc', 'script'];
+  const validCommands = ['re', 's', 'scrip'];
 
   if (validCommands.includes(cmd)) {
     const repoUrl = `https://api.github.com/repos/devibraah/BWM-XMD`;
@@ -16,7 +17,7 @@ const searchRepo = async (m, Matrix) => {
   }
 };
 
-const handleRepoCommand = async (m, Matrix, repoUrl) => {
+async (dest, zk, commandeOptions) => {
   try {
     const response = await axios.get(repoUrl);
     const repoData = response.data;
@@ -109,9 +110,7 @@ const handleRepoCommand = async (m, Matrix, repoUrl) => {
     m.reply('Error processing your request.');
     await m.React('❌');
   }
-};
-
-export default searchRepo;
+});
 /**
 
 function _0x1343(_0x54e8c6, _0x3f9938) {
