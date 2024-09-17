@@ -16,7 +16,7 @@ const axios = require("axios");
 
 *_Owner:_* *_Ibrahim Adams_*
     `;
-
+/**
     const repoMessage = generateWAMessageFromContent(m.from, {
       viewOnceMessage: {
         message: {
@@ -85,6 +85,7 @@ const axios = require("axios");
     console.error('Error processing your request:', error);
     m.reply('Error processing your request.');
     await m.React('❌');
+ **/
   }
 });
 /**
