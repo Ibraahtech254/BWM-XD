@@ -84,10 +84,6 @@ const date = moment().format('DD/MM/YYYY');
         },
       },
     }, {});
-    
-const menuMessage = `
-> Made by : ©Ibrahim Adams 
-`;
 
    var lien = mybotpic();
 
