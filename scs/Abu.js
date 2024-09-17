@@ -18,7 +18,7 @@ adams({ nomCom: "sp", categorie: "General" }, async (dest, zk, commandeOptions) 
     let { ms, repondre ,prefixe,nomAuteurMessage,mybotpic} = commandeOptions;
     let { cm } = require(__dirname + "/../Ibrahim//adams");
     var coms = {};
-    var mode = "public";
+    
     
     if ((s.MODE).toLocaleLowerCase() != "yes") {
         mode = "private";
@@ -83,7 +83,9 @@ const date = moment().format('DD/MM/YYYY');
           }),
         },
       },
-   };
+     },
+  var mode = "public";
+            }
   });
     
     
