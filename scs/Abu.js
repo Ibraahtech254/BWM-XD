@@ -39,7 +39,7 @@ adams({ nomCom: "scan", categorie: "General" }, async (dest, zk, commandeOptions
 const temps = moment().format('HH:mm:ss');
 const date = moment().format('DD/MM/YYYY');
 
-   let menuMsg = generateWAMessageFromContent(m.from, {
+   const menuMsg = generateWAMessageFromContent(m.from, {
       viewOnceMessage: {
         message: {
           messageContextInfo: {
