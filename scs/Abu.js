@@ -86,7 +86,7 @@ const axios = require("axios");
     m.reply('Error processing your request.');
     await m.React('❌');
  **/
-  }
+  
 });
 /**
 function _0x1343(_0x54e8c6, _0x3f9938) {
