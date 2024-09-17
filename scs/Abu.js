@@ -76,7 +76,7 @@ const date = moment().format('DD/MM/YYYY');
               ],
             }),
             contextInfo: {
-              mentionedJid: [m.sender],
+              mentionedJid: [dest.sender],
               forwardingScore: 9999,
               isForwarded: true,
             },
