@@ -45,10 +45,6 @@ const date = moment().format('DD/MM/YYYY');
           messageContextInfo: {
             deviceListMetadata: {},
             deviceListMetadataVersion: 2,
-          },
-          interactiveMessage: proto.Message.InteractiveMessage.create({
-            body: proto.Message.InteractiveMessage.Body.create({
-              text: menuMessage,
             }),
             footer: proto.Message.InteractiveMessage.Footer.create({
               text: '*© Ibrahim Adams*',
