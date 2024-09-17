@@ -11,7 +11,7 @@ const axios = require("axios");
 }, async  (m, zk, repoUrl) => {
   adams({
   'nomCom': "rep",
-  'reaction': '📂'
+  'reaction': '📂';
     const messageText = `*_BMW MD GITHUB INFORMATION:_*\n
 *_Name:_* ${name}
 *_Stars:_* ${stargazers_count}
