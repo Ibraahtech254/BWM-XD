@@ -1,3 +1,4 @@
+const {adams} = require("../Ibrahim/adams");
 const pkg, { prepareWAMessageMedia } require '@whiskeysockets/baileys';
 const { generateWAMessageFromContent, proto } = pkg;
 const axios = require("axios");
