@@ -85,13 +85,11 @@ const date = moment().format('DD/MM/YYYY');
       },
     }, {});
 
-   var lien = mybotpic();
+      var lien = mybotpic();
 
    if (lien.match(/\.(mp4|gif)$/i)) {
     try {
-        zk.sendMessage(dest, { video: { url: lien }, caption:infoMsg menuMsg = `
-> Made by : ©Ibrahim Adams 
-`; + menuMessage, footer: "Je suis *adams*, déveloper adams Tech" , gifPlayback : true }, { quoted: ms });
+        zk.sendMessage(dest, { video: { url: lien }, caption:infoMsg + menuMsg, footer: "*BMW MD*, déveloped Ibrahim Adams" , gifPlayback : true }, { quoted: ms });
     }
     catch (e) {
         console.log("🥵🥵 Menu erreur " + e);
@@ -101,7 +99,7 @@ const date = moment().format('DD/MM/YYYY');
 // Vérification pour .jpeg ou .png
 else if (lien.match(/\.(jpeg|png|jpg)$/i)) {
     try {
-        zk.sendMessage(dest, { image: { url: lien }, caption:infoMsg + infoMsg, footer: "Je suis *adams*, déveloper adams Tech" }, { quoted: ms });
+        zk.sendMessage(dest, { image: { url: lien }, caption:infoMsg + menuMsg, footer: "Je suis *BMW MD*, déveloped Ibrahim Adams" }, { quoted: ms });
     }
     catch (e) {
         console.log("🥵🥵 Menu erreur " + e);
@@ -112,8 +110,7 @@ else {
     
     repondre(infoMsg + menuMsg);
     
-}
-
-}); 
-
-
+            
+                
+    }
+         });
