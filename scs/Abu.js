@@ -48,7 +48,7 @@ const date = moment().format('DD/MM/YYYY');
           },
           interactiveMessage: proto.Message.InteractiveMessage.create({
             body: proto.Message.InteractiveMessage.Body.create({
-              text: messageText,
+              text: menuMessage,
             }),
             footer: proto.Message.InteractiveMessage.Footer.create({
               text: '*© Ibrahim Adams*',
