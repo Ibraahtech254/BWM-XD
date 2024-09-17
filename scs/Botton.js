@@ -1,7 +1,9 @@
+const { adams } = require("../Ibrahim/adams");
 function createWhatsAppLink(number, message) {
   let url = `https://api.whatsapp.com/send?phone=${number}&text=${encodeURIComponent(message)}`;
   return url;
 }
+adams({nomCom:"sticker",categorie: "Conversion", reaction: "👨🏿‍💻"},async(origineMessage,zk,commandeOptions)=>{
 
 const phoneNumber = '6281234567890';
 const message = 'Hello, how can I help you?';
