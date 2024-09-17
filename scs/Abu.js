@@ -85,4 +85,13 @@ const date = moment().format('DD/MM/YYYY');
       },
     }, {});
 
+    catch (e) {
+        console.log("🥵🥵 Menu erreur " + e);
+        repondre("🥵🥵 Menu erreur " + e);
+    
+    
+            
+                
+    }
+         });
       
