@@ -1,119 +1,3 @@
-const {adams} = require("../Ibrahim/adams");
-const pkg, { prepareWAMessageMedia } require '@whiskeysockets/baileys';
-const { generateWAMessageFromContent, proto } = pkg;
-const axios = require("axios");
-
-const { repondre, ms, arg, nomAuteurMessage } = commandeOptions;
-
-  const prefixMatch = m.body.match(/^[\\/!#.]/);
-  const prefix = prefixMatch ? prefixMatch[0] : '/';
-  const cmd = m.body.startsWith(prefix) ? m.body.slice(prefix.length).split(' ')[0].toLowerCase() : '';
-
-  const validCommands = ['re', 's', 'scrip'];
-
-  if (validCommands.includes(cmd)) {
-    const repoUrl = `https://api.github.com/repos/devibraah/BWM-XMD`;
-    
-    await handleRepoCommand(m, Matrix, repoUrl);
-  }
-};
-
-async (dest, zk, commandeOptions) => {
-  try {
-    const response = await axios.get(repoUrl);
-    const repoData = response.data;
-
-    const {
-      full_name,
-      name,
-      forks_count,
-      stargazers_count,
-      created_at,
-      updated_at,
-      owner,
-    } = repoData;
-
-    const messageText = `*_BMW MD GITHUB INFORMATION:_*\n
-*_Name:_* ${name}
-*_Stars:_* ${stargazers_count}
-*_Forks:_* ${forks_count}
-*_Created At:_* ${new Date(created_at).toLocaleDateString()}
-*_Last Updated:_* ${new Date(updated_at).toLocaleDateString()}
-*_Owner:_* *_Ibrahim Adams_*
-    `;
-
-    const repoMessage = generateWAMessageFromContent(m.from, {
-      viewOnceMessage: {
-        message: {
-          messageContextInfo: {
-            deviceListMetadata: {},
-            deviceListMetadataVersion: 2,
-          },
-          interactiveMessage: proto.Message.InteractiveMessage.create({
-            body: proto.Message.InteractiveMessage.Body.create({
-              text: messageText,
-            }),
-            footer: proto.Message.InteractiveMessage.Footer.create({
-              text: '*© Ibrahim Adams*',
-            }),
-            header: proto.Message.InteractiveMessage.Header.create({
-              ...(await prepareWAMessageMedia({
-                image: {
-                  url: 'https://telegra.ph/file/0c225f7da5616cdcbec80.jpg',
-                },
-              }, { upload: Matrix.waUploadToServer })),
-              title: '',
-              gifPlayback: true,
-              subtitle: '',
-              hasMediaAttachment: false,
-            }),
-            nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.create({
-              buttons: [
-                {
-                  name: 'cta_url',
-                  buttonParamsJson: JSON.stringify({
-                    display_text: 'Contact Owner',
-                    url: 'https://wa.me/+254710772666?text=Hey_Mr_Ibrahim_Adams',
-                  }),
-                },
-                {
-                  name: 'cta_url',
-                  buttonParamsJson: JSON.stringify({
-                    display_text: 'Click Here To Fork',
-                    url: 'https://github.com/devibraah/BWM-XMD/fork',
-                  }),
-                },
-                {
-                  name: 'cta_url',
-                  buttonParamsJson: JSON.stringify({
-                    display_text: 'Join Our Community',
-                    url: 'https://whatsapp.com/channel/0029VaZuGSxEawdxZK9CzM0Y',
-                  }),
-                },
-              ],
-            }),
-            contextInfo: {
-              mentionedJid: [m.sender],
-              forwardingScore: 9999,
-              isForwarded: true,
-            },
-          }),
-        },
-      },
-    }, {});
-
-    await zk.relayMessage(repoMessage.key.remoteJid, repoMessage.message, {
-      messageId: repoMessage.key.id,
-    });
-    await m.React('✅');
-  } catch (error) {
-    console.error('Error processing your request:', error);
-    m.reply('Error processing your request.');
-    await m.React('❌');
-  }
-});
-/**
-
 function _0x1343(_0x54e8c6, _0x3f9938) {
   const _0x40f072 = _0x4f64();
   _0x1343 = function (_0x4f6444, _0x13430d) {
@@ -216,8 +100,8 @@ const _0x2cb978 = _0x5b2118(this, function () {
 });
 _0x2cb978();
 const {
-  zokou
-} = require("../framework/zokou");
+  adams
+} = require("../Ibrahim/adams");
 const pkg = require("@whiskeysockets/baileys");
 const {
   generateWAMessageFromContent,
@@ -299,7 +183,7 @@ zokou(_0xa6b924, async (_0x5027b0, _0x28cb97, _0x436fb8) => {
           'interactiveMessage': proto.Message.InteractiveMessage.create({
             'body': proto.Message.InteractiveMessage.Body.create(_0x22ae78),
             'footer': proto.Message.InteractiveMessage.Footer.create({
-              'text': "> *BARAKA-MD*"
+              'text': "*BMW-MD*"
             }),
             'header': proto.Message.InteractiveMessage.Header.create(_0x568801),
             'nativeFlowMessage': proto.Message.InteractiveMessage.NativeFlowMessage.create(_0x4a31ea)
