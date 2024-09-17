@@ -8,34 +8,10 @@ const {
 } = pkg;
 const axios = require("axios");
 
-const searchRepo = async (m, zk, repoUrl) => {
+}, async  (m, zk, repoUrl) => {
   adams({
   'nomCom': "rep",
-  'reaction': '📂',
-
-  if (validCommands.includes(cmd)) {
-    const repoUrl = `https://api.github.com/repos/devibraah/BWM-XMD`;
-    
-    await (m, zk, repoUrl);
-  }
-};
-
-
-}, async  (m, zk, repoUrl) => {
-  try {
-    const response = await axios.get(repoUrl);
-    const repoData = response.data;
-
-    const {
-      full_name,
-      name,
-      forks_count,
-      stargazers_count,
-      created_at,
-      updated_at,
-      owner,
-    } = repoData;
-
+  'reaction': '📂'
     const messageText = `*_BMW MD GITHUB INFORMATION:_*\n
 *_Name:_* ${name}
 *_Stars:_* ${stargazers_count}
