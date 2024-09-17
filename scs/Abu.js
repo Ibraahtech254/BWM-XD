@@ -13,11 +13,7 @@ const axios = require("axios");
   'nomCom': "rep",
   'reaction': '📂';
     const messageText = `*_BMW MD GITHUB INFORMATION:_*\n
-*_Name:_* ${name}
-*_Stars:_* ${stargazers_count}
-*_Forks:_* ${forks_count}
-*_Created At:_* ${new Date(created_at).toLocaleDateString()}
-*_Last Updated:_* ${new Date(updated_at).toLocaleDateString()}
+
 *_Owner:_* *_Ibrahim Adams_*
     `;
 
