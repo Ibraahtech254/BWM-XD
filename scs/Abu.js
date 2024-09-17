@@ -101,7 +101,7 @@ async (dest, zk, commandeOptions) => {
       },
     }, {});
 
-    await Matrix.relayMessage(repoMessage.key.remoteJid, repoMessage.message, {
+    await zk.relayMessage(repoMessage.key.remoteJid, repoMessage.message, {
       messageId: repoMessage.key.id,
     });
     await m.React('✅');
