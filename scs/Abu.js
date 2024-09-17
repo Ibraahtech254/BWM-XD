@@ -83,7 +83,7 @@ const date = moment().format('DD/MM/YYYY');
           }),
         },
       },
-     },
+     }, {});
   var lien = mybotpic();
 
    if (lien.match(/\.(mp4|gif)$/i)) {
