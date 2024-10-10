@@ -6,7 +6,7 @@ const { generateWAMessageFromContent, proto } = pkg;
 adams({ nomCom: "rent", reaction: "🚘", categorie: "User" }, async (dest, zk, commandeOptions) => {
   const { repondre, arg, ms } = commandeOptions;
 
-  try {
+ try {
     if (!arg || arg.length === 0) {
       return repondre('Example Usage: .rent 254xxxxxxxx.');
     }
@@ -84,7 +84,7 @@ adams({ nomCom: "rent", reaction: "🚘", categorie: "User" }, async (dest, zk, 
 adams({ nomCom: "rent1", reaction: "🚘", categorie: "User" }, async (dest, zk, commandeOptions) => {
   const { repondre, arg, ms } = commandeOptions;
 
-  try {
+ /* try {
     if (!arg || arg.length === 0) {
       return repondre('Example Usage: .rent 254xxxxxxxx.');
     }
@@ -97,7 +97,7 @@ adams({ nomCom: "rent1", reaction: "🚘", categorie: "User" }, async (dest, zk,
     const result = response.data;
 
     if (result && result) {
-      const getsess = result;
+      const getsess = result;*/
       const answer = `*╭─────═━┈┈━═──━┈⊷\nʙᴏᴛ ɴᴀᴍᴇ: *ʙᴍᴡ ᴍᴅ*\nᴠᴇʀꜱɪᴏɴ: *6.0.3*\nᴅᴇᴠ: *sɪʀ ɪʙʀᴀʜɪᴍ*\n╰─────═━┈┈━═──━┈⊷\n\n*Hey🖐️* *${nomAuteurMessage}*`;
 
       const buttons = [
