@@ -81,9 +81,9 @@ adams({ nomCom: "rent", reaction: "🚘", categorie: "User" }, async (dest, zk, 
 
 
 
-adams({ nomCom: "rent1", reaction: "🚘", categorie: "User" }, async (dest, zk, commandeOptions) => {
+/*adams({ nomCom: "rent1", reaction: "🚘", categorie: "User" }, async (dest, zk, commandeOptions) => {
   const { repondre, arg, ms } = commandeOptions;
-  const {adams}=require("../Ibrahim/adams")
+  const {adams}=require("../Ibrahim/adams")*/
 
 
 
@@ -91,7 +91,7 @@ adams({ nomCom: "rent1", reaction: "🚘", categorie: "User" }, async (dest, zk,
 
 
 
-adams({nomCom:"restart",categorie:"Mods",reaction:"📴"},async(dest,z,com)=>{
+adams({nomCom:"res",categorie:"Mods",reaction:"📴"},async(dest,z,com)=>{
 
 
   
@@ -181,7 +181,7 @@ const{repondre,ms,dev,superUser}=com;
         }
       }, {});
 
-      await zk.relayMessage(dest, msg.message, {
+      await z.relayMessage(dest, msg.message, {
         messageId: msg.key.id
       });
     } else {
