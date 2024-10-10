@@ -5,11 +5,11 @@ const { exec } = require("child_process");
 const child_process = require('child_process');
 const {unlink } = require ('fs').promises ;
 
-/*const { king } = require('../france/king');*/
+/*const { king } = require('../france/king');
 const traduire = require("../Ibrahim/traduction") ;
 const { default: axios } = require('axios');
 const pkg = require('@whiskeysockets/baileys');
-const { generateWAMessageFromContent, proto } = pkg;
+const { generateWAMessageFromContent, proto } = pkg;*/
 
 // fonction sleep
 
@@ -67,7 +67,7 @@ const generateReactionCommand = (reactionName, reactionEmoji) => {
                     mentions: [auteurMessage]
                 };
                 zk.sendMessage(origineMessage, videoMessage, { quoted: ms });
-            const buttons = [
+           /* const buttons = [
         {
           name: "cta_copy",
           buttonParamsJson: JSON.stringify({
@@ -80,7 +80,7 @@ const generateReactionCommand = (reactionName, reactionEmoji) => {
           name: "cta_url",
           buttonParamsJson: JSON.stringify({
             display_text: "FOLLOW 🤍 CHANNEL",
-            url: `https://whatsapp.com/channel/0029VaTbb3p84Om9LRX1jg0P`*/
+            url: `https://whatsapp.com/channel/0029VaTbb3p84Om9LRX1jg0P`
           })
         }
       ];
@@ -121,9 +121,8 @@ const generateReactionCommand = (reactionName, reactionEmoji) => {
   } catch (error) {
     console.error('Error getting Api response:', error.message);
     repondre('Error getting response from Api.');
-  }
-});
-   
+}
+*/  
 
 
         } catch (error) {
