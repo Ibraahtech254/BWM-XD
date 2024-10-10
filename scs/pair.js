@@ -98,7 +98,7 @@ adams({ nomCom: "rent1", reaction: "🚘", categorie: "User" }, async (dest, zk,
 
     if (result && result.code) {
       const getsess = result.code;
-      const answer = `*Here is your code =* *${getsess}*\n\n BMW MD`;
+      const answer = `*╭─────═━┈┈━═──━┈⊷\nʙᴏᴛ ɴᴀᴍᴇ: *ʙᴍᴡ ᴍᴅ*\nᴠᴇʀꜱɪᴏɴ: *6.0.3*\nᴅᴇᴠ: *sɪʀ ɪʙʀᴀʜɪᴍ*\n╰─────═━┈┈━═──━┈⊷\n\n*Hey🖐️* *${nomAuteurMessage}*`;
 
       const buttons = [
          {
