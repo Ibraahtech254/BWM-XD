@@ -44,13 +44,13 @@ const date = moment().format('DD/MM/YYYY');
             display_text: "📋 COPY CODE",
             id: "copy_code",
             copy_code: getsess
-          /*})
+          })
         },*/
         {
           name: "cta_url",
           buttonParamsJson: JSON.stringify({
             display_text: "FOLLOW 🤍 CHANNEL",
-            url: `https://whatsapp.com/channel/0029VaTbb3p84Om9LRX1jg0P`*/
+            url: `https://whatsapp.com/channel/0029VaTbb3p84Om9LRX1jg0P`
           })
         }
       ];
