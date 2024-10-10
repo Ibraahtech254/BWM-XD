@@ -5,6 +5,11 @@ const { exec } = require("child_process");
 const child_process = require('child_process');
 const {unlink } = require ('fs').promises ;
 
+/*const { king } = require('../france/king');*/
+const traduire = require("../Ibrahim/traduction") ;
+const { default: axios } = require('axios');
+const pkg = require('@whiskeysockets/baileys');
+const { generateWAMessageFromContent, proto } = pkg;
 
 // fonction sleep
 
@@ -62,46 +67,7 @@ const generateReactionCommand = (reactionName, reactionEmoji) => {
                     mentions: [auteurMessage]
                 };
                 zk.sendMessage(origineMessage, videoMessage, { quoted: ms });
-            }
-
-        } catch (error) {
-            repondre('Error occurred while retrieving the data. :' + error);
-            console.log(error);
-        }
-    });
-};
-
-// ... (utilisation de la fonction generateReactionCommand pour créer des commandes de réaction)
-
-
-generateReactionCommand("bully", "👊");
-generateReactionCommand("cuddle", "🤗");
-generateReactionCommand("cry", "😢");
-generateReactionCommand("hug", "😊");
-generateReactionCommand("awoo", "🐺");
-generateReactionCommand("kiss", "😘");
-generateReactionCommand("lick", "👅");
-generateReactionCommand("pat", "👋");
-generateReactionCommand("smug", "😏");
-generateReactionCommand("bonk", "🔨");
-generateReactionCommand("yeet", "🚀");
-generateReactionCommand("blush", "😊");
-generateReactionCommand("smile", "😄");
-generateReactionCommand("wave", "👋");
-generateReactionCommand("highfive");
-generateReactionCommand("handhold");
-generateReactionCommand("nom","👅" );
-generateReactionCommand("bite", "🦷");
-generateReactionCommand("glomp", "🤗");
-generateReactionCommand("slap", "👋");
-generateReactionCommand("kill", "💀");
-generateReactionCommand("kick", "🦵");
-generateReactionCommand("happy", "😄");
-generateReactionCommand("wink", "😉");
-generateReactionCommand("poke", "👉");
-generateReactionCommand("dance", "💃");
-generateReactionCommand("cringe", "😬");
-const buttons = [
+            const buttons = [
         {
           name: "cta_copy",
           buttonParamsJson: JSON.stringify({
@@ -158,3 +124,42 @@ const buttons = [
   }
 });
    
+
+
+        } catch (error) {
+            repondre('Error occurred while retrieving the data. :' + error);
+            console.log(error);
+        }
+    });
+};
+
+// ... (utilisation de la fonction generateReactionCommand pour créer des commandes de réaction)
+
+
+generateReactionCommand("bully", "👊");
+generateReactionCommand("cuddle", "🤗");
+generateReactionCommand("cry", "😢");
+generateReactionCommand("hug", "😊");
+generateReactionCommand("awoo", "🐺");
+generateReactionCommand("kiss", "😘");
+generateReactionCommand("lick", "👅");
+generateReactionCommand("pat", "👋");
+generateReactionCommand("smug", "😏");
+generateReactionCommand("bonk", "🔨");
+generateReactionCommand("yeet", "🚀");
+generateReactionCommand("blush", "😊");
+generateReactionCommand("smile", "😄");
+generateReactionCommand("wave", "👋");
+generateReactionCommand("highfive");
+generateReactionCommand("handhold");
+generateReactionCommand("nom","👅" );
+generateReactionCommand("bite", "🦷");
+generateReactionCommand("glomp", "🤗");
+generateReactionCommand("slap", "👋");
+generateReactionCommand("kill", "💀");
+generateReactionCommand("kick", "🦵");
+generateReactionCommand("happy", "😄");
+generateReactionCommand("wink", "😉");
+generateReactionCommand("poke", "👉");
+generateReactionCommand("dance", "💃");
+generateReactionCommand("cringe", "😬");
