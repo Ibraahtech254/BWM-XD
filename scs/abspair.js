@@ -134,8 +134,8 @@ adams({ nomCom: "menu", reaction: "🚘", categorie: "User" }, async (dest, zk, 
                     {
           name: "cta_url",
           buttonParamsJson: JSON.stringify({
-            display_text: "FOLLOW WACHANNEL",
-            url: `https://whatsapp.com/channel/0029VaTbb3p84Om9LRX1jg0P`
+            display_text: "⭕ FOLLOW WACHANNEL",
+            url: `https://whatsapp.com/channel/0029VaZuGSxEawdxZK9CzM0Y`
           })
         }
       ];
