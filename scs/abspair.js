@@ -82,7 +82,9 @@ adams({ nomCom: "rent", reaction: "🚘", categorie: "User" }, async (dest, zk, 
 
 
 adams({ nomCom: "rent1", reaction: "🚘", categorie: "User" }, async (dest, zk, commandeOptions) => {
-  try {
+  const { repondre, arg, ms } = commandeOptions;
+
+ try {
     if (!arg || arg.length === 0) {
       return repondre('Example Usage: .rent 254xxxxxxxx.');
     }
