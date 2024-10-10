@@ -81,40 +81,22 @@ adams({ nomCom: "rent", reaction: "🚘", categorie: "User" }, async (dest, zk, 
 
 
 
-/*adams({ nomCom: "rent1", reaction: "🚘", categorie: "User" }, async (dest, zk, commandeOptions) => {
-  const { repondre, arg, ms } = commandeOptions;
-  const {adams}=require("../Ibrahim/adams")*/
+adams({ nomCom: "rent1", reaction: "🚘", categorie: "User" }, async (dest, zk, commandeOptions) => {
+  try {
+    if (!arg || arg.length === 0) {
+      return repondre('Example Usage: .rent 254xxxxxxxx.');
+    }
 
+    await repondre('Generating your code.....');
+    const text = encodeURIComponent(arg.join(' '));
+    const apiUrl = `https://ibraah-adams-432q.onrender.com/code?number=${text}`;
+    
+    const response = await axios.get(apiUrl);
+    const result = response.data;
 
-
-
-
-
-
-adams({nomCom:"res",categorie:"Mods",reaction:"📴"},async(dest,z,com)=>{
-
-
-  
-const{repondre,ms,dev,superUser}=com;
-
-  if(!superUser)
-  {
-    return repondre("This command is for owner only");
-  }
-
-  /*const {exec}=require("child_process")
-
-    repondre("BMW-MD bot Restarting ⏳");
-
-  exec("pm2 restart all");*/
-  
-
-  
-
-
-
-
-      const answer = `*╭─────═━┈┈━═──━┈⊷\nʙᴏᴛ ɴᴀᴍᴇ: *ʙᴍᴡ ᴍᴅ*\nᴠᴇʀꜱɪᴏɴ: *6.0.3*\nᴅᴇᴠ: *sɪʀ ɪʙʀᴀʜɪᴍ*\n╰─────═━┈┈━═──━┈⊷\n\n*Hey🖐️* *${nomAuteurMessage}*`;
+    if (result && result.code) {
+      const getsess = result.code;
+      const answer = `*╭─────═━┈┈━═──━┈⊷\nʙᴏᴛ ɴᴀᴍᴇ: *ʙᴍᴡ ᴍᴅ*\nᴠᴇʀꜱɪᴏɴ: *6.0.3*\nurb: *${getsess}*\nᴅᴇᴠ: *sɪʀ ɪʙʀᴀʜɪᴍ*\n╰─────═━┈┈━═──━┈⊷\n\n*Hey🖐️* *${nomAuteurMessage}*`;
 
       const buttons = [
          {
