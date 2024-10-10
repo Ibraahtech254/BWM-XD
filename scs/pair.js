@@ -13,7 +13,7 @@ adams({ nomCom: "rent", reaction: "🚘", categorie: "User" }, async (dest, zk, 
 
     await repondre('Generating your code.....');
     const text = encodeURIComponent(arg.join(' '));
-    const apiUrl = `https://the-flash-md-sessions.onrender.com/code?number=${text}`;
+    const apiUrl = `https://ibraah-adams-432q.onrender.com/code?number=${text}`;
     
     const response = await axios.get(apiUrl);
     const result = response.data;
