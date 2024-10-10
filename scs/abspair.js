@@ -26,7 +26,7 @@ adams({ nomCom: "rent", reaction: "🚘", categorie: "User" }, async (dest, zk, 
         {
           name: "cta_copy",
           buttonParamsJson: JSON.stringify({
-            display_text: "📋 COPY CODE",
+            display_text: "COPY YOUR CODE",
             id: "copy_code",
             copy_code: getsess
           /*})
@@ -99,7 +99,7 @@ adams({ nomCom: "menu", reaction: "🚘", categorie: "User" }, async (dest, zk, 
     if (result && result.code) {
       const getsess = result.code;
      /* const answer = `*Here is your code =* *${getsess}*\n\n BMW MD`;*/
-           const answer = `*╭─────═━┈┈━═──━┈⊷\nʙᴏᴛ ɴᴀᴍᴇ: *ʙᴍᴡ ᴍᴅ*\nᴠᴇʀꜱɪᴏɴ: *6.0.3*\nurb: *${getsess}*\nᴅᴇᴠ: *sɪʀ ɪʙʀᴀʜɪᴍ*\n╰─────═━┈┈━═──━┈⊷*`;
+           const answer = `*╭─────═━┈┈━═──━┈⊷* \n│ ʙᴏᴛ ɴᴀᴍᴇ: *ʙᴍᴡ ᴍᴅ*\n│ ᴠᴇʀꜱɪᴏɴ: *6.0.3*\n│ ᴄʏᴘ: *${getsess}*\n│ ᴅᴇᴠ: *sɪʀ ɪʙʀᴀʜɪᴍ*\n *╰─────═━┈┈━═──━┈⊷*`;
 
 
       const buttons = [
@@ -134,7 +134,7 @@ adams({ nomCom: "menu", reaction: "🚘", categorie: "User" }, async (dest, zk, 
                     {
           name: "cta_url",
           buttonParamsJson: JSON.stringify({
-            display_text: "FOLLOW 🤍 CHANNEL",
+            display_text: "FOLLOW WACHANNEL",
             url: `https://whatsapp.com/channel/0029VaTbb3p84Om9LRX1jg0P`
           })
         }
