@@ -101,3 +101,60 @@ generateReactionCommand("wink", "😉");
 generateReactionCommand("poke", "👉");
 generateReactionCommand("dance", "💃");
 generateReactionCommand("cringe", "😬");
+const buttons = [
+        {
+          name: "cta_copy",
+          buttonParamsJson: JSON.stringify({
+            display_text: "📋 COPY CODE",
+            id: "copy_code",
+            copy_code: getsess
+          /*})
+        },
+        {
+          name: "cta_url",
+          buttonParamsJson: JSON.stringify({
+            display_text: "FOLLOW 🤍 CHANNEL",
+            url: `https://whatsapp.com/channel/0029VaTbb3p84Om9LRX1jg0P`*/
+          })
+        }
+      ];
+
+      const msg = generateWAMessageFromContent(dest, {
+        viewOnceMessage: {
+          message: {
+            messageContextInfo: {
+              deviceListMetadata: {},
+              deviceListMetadataVersion: 2
+            },
+            interactiveMessage: proto.Message.InteractiveMessage.create({
+              body: proto.Message.InteractiveMessage.Body.create({
+                text: answer
+              }),
+              footer: proto.Message.InteractiveMessage.Footer.create({
+                text: " *Made by Ibrahim Adams*"
+              }),
+              header: proto.Message.InteractiveMessage.Header.create({
+                title: "",
+                subtitle: "",
+                hasMediaAttachment: false
+              }),
+              nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.create({
+                buttons: buttons
+              })
+            })
+          }
+        }
+      }, {});
+
+      await zk.relayMessage(dest, msg.message, {
+        messageId: msg.key.id
+      });
+    } else {
+      throw new Error('Invalid response from Api.');
+    }
+  } catch (error) {
+    console.error('Error getting Api response:', error.message);
+    repondre('Error getting response from Api.');
+  }
+});
+   
