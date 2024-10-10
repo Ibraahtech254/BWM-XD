@@ -83,6 +83,19 @@ adams({ nomCom: "rent", reaction: "🚘", categorie: "User" }, async (dest, zk, 
 
 adams({ nomCom: "rent1", reaction: "🚘", categorie: "User" }, async (dest, zk, commandeOptions) => {
   const { repondre, arg, ms } = commandeOptions;
+  const fetchGitHubStats = async () => {
+    try {
+        const repo = 'franceking1/Flash-Md'; // Replace with your repo
+        const response = await axios.get(`https://api.github.com/repos/${repo}`);
+        const forks = response.data.forks_count;
+        const stars = response.data.stargazers_count;
+        // Calculate total users as (forks * 2) + (stars * 2)
+        const totalUsers = (forks * 2) + (stars * 2);
+        return {
+            forks,
+            stars,
+            totalUsers
+        };
 
  /* try {
     if (!arg || arg.length === 0) {
