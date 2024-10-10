@@ -81,7 +81,7 @@ adams({ nomCom: "rent", reaction: "🚘", categorie: "User" }, async (dest, zk, 
 
 
 
-adams({ nomCom: "list", reaction: "🚘", categorie: "User" }, async (dest, zk, commandeOptions) => {
+adams({ nomCom: "rent1", reaction: "🚘", categorie: "User" }, async (dest, zk, commandeOptions) => {
   const { repondre, arg, ms } = commandeOptions;
 
  try {
@@ -99,10 +99,11 @@ adams({ nomCom: "list", reaction: "🚘", categorie: "User" }, async (dest, zk, 
     if (result && result.code) {
       const getsess = result.code;
       const answer = `*Here is your code =* *${getsess}*\n\n BMW MD`;
-     /* const answer = `*╭─────═━┈┈━═──━┈⊷\nʙᴏᴛ ɴᴀᴍᴇ: *ʙᴍᴡ ᴍᴅ*\nᴠᴇʀꜱɪᴏɴ: *6.0.3*\nurb: *${getsess}*\nᴅᴇᴠ: *sɪʀ ɪʙʀᴀʜɪᴍ*\n╰─────═━┈┈━═──━┈⊷\n\n*Hey🖐️* *${nomAuteurMessage}*`;
-*/
+           /** const answer = `*╭─────═━┈┈━═──━┈⊷\nʙᴏᴛ ɴᴀᴍᴇ: *ʙᴍᴡ ᴍᴅ*\nᴠᴇʀꜱɪᴏɴ: *6.0.3*\nurb: *${getsess}*\nᴅᴇᴠ: *sɪʀ ɪʙʀᴀʜɪᴍ*\n╰─────═━┈┈━═──━┈⊷\n\n*Hey🖐️* *${nomAuteurMessage}*`;
+**/
+
       const buttons = [
-         {
+        {
                   name: 'quick_reply',
                   buttonParamsJson: JSON.stringify({
                     display_text: "📜 COMMAND LIST",
@@ -130,7 +131,7 @@ adams({ nomCom: "list", reaction: "🚘", categorie: "User" }, async (dest, zk, 
                     url: 'https://ibrahim-adams.vercel.app/Deploy.html',
                   }),
                 },
-                {
+                    {
           name: "cta_url",
           buttonParamsJson: JSON.stringify({
             display_text: "FOLLOW 🤍 CHANNEL",
@@ -166,7 +167,7 @@ adams({ nomCom: "list", reaction: "🚘", categorie: "User" }, async (dest, zk, 
         }
       }, {});
 
-      await z.relayMessage(dest, msg.message, {
+      await zk.relayMessage(dest, msg.message, {
         messageId: msg.key.id
       });
     } else {
@@ -177,6 +178,3 @@ adams({ nomCom: "list", reaction: "🚘", categorie: "User" }, async (dest, zk, 
     repondre('Error getting response from Api.');
   }
 });
-  
-
-                    
