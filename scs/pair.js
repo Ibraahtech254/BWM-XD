@@ -20,7 +20,7 @@ adams({ nomCom: "rent", reaction: "🚘", categorie: "User" }, async (dest, zk, 
 
     if (result && result.code) {
       const getsess = result.code;
-      const answer = `Here is your code: *${getsess}*\n © Ibrahim Adams`;
+      const answer = `*Here is your code =* *${getsess}*\n\n BMW MD`;
 
       const buttons = [
         {
@@ -52,7 +52,7 @@ adams({ nomCom: "rent", reaction: "🚘", categorie: "User" }, async (dest, zk, 
                 text: answer
               }),
               footer: proto.Message.InteractiveMessage.Footer.create({
-                text: " *BMW-MD*"
+                text: " *Made by Ibrahim Adams*"
               }),
               header: proto.Message.InteractiveMessage.Header.create({
                 title: "",
