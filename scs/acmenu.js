@@ -11,7 +11,7 @@ const s = require(__dirname + "/../config");
 const more = String.fromCharCode(8206)
 const Taphere = more.repeat(4001)
 
-adams({ nomCom: "men", categorie: "General" }, async (dest, zk, commandeOptions) => {
+adams({ nomCom: "command", categorie: "General" }, async (dest, zk, commandeOptions) => {
     let { ms, repondre ,prefixe,nomAuteurMessage} = commandeOptions;
     let { cm } = require(__dirname + "/../Ibrahim//adams");
     var coms = {};
@@ -37,96 +37,7 @@ const temps = moment().format('HH:mm:ss');
 const date = moment().format('DD/MM/YYYY');
 
 
-  const buttons = [
-        /*{
-          name: "cta_copy",
-          buttonParamsJson: JSON.stringify({
-            display_text: "📋 COPY CODE",
-            id: "copy_code",
-            copy_code: getsess
-          })
-        },*/
-        {
-          name: "cta_url",
-          buttonParamsJson: JSON.stringify({
-            display_text: "FOLLOW 🤍 CHANNEL",
-            url: `https://whatsapp.com/channel/0029VaTbb3p84Om9LRX1jg0P`
-          })
-        }
-      ];
-
-      const msg = generateWAMessageFromContent(dest, {
-        viewOnceMessage: {
-          message: {
-            messageContextInfo: {
-              deviceListMetadata: {},
-              deviceListMetadataVersion: 2
-            },
-            interactiveMessage: proto.Message.InteractiveMessage.create({
-              body: proto.Message.InteractiveMessage.Body.create({
-                text: answer
-              }),
-              footer: proto.Message.InteractiveMessage.Footer.create({
-                text: " *Made by Ibrahim Adams*"
-              }),
-              header: proto.Message.InteractiveMessage.Header.create({
-                title: "",
-                subtitle: "",
-                hasMediaAttachment: false
-              }),
-              nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.create({
-                buttons: buttons
-              })
-            })
-          }
-        }
-      }, {});
-
-      await zk.relayMessage(dest, msg.message, {
-        messageId: msg.key.id
-      });
-    } else {
-      throw new Error('Invalid response from Api.');
-    }
-  } catch (error) {
-    console.error('Error getting Api response:', error.message);
-    repondre('Error getting response from Api.');
-  }
-});
-   
-/*let infoMsg =  `
-*Hey🖐️* *${nomAuteurMessage}*
-╭─────═━┈┈━═──━┈⊷
-┇ 『𝐌𝐀𝐈𝐍』
-┇ 🤖 ʙᴏᴛ ɴᴀᴍᴇ: *ʙᴍᴡ ᴍᴅ*
-┇ 💢 ᴛʏᴘᴇ: *ᴠ6x*
-┇ 🥷 ᴅᴇᴠ: *sɪʀ ɪʙʀᴀʜɪᴍ*
-╰─────═━┈┈━═──━┈⊷
-╭─────═━┈┈━═──━┈⊷
-┇ 『𝐒𝐘𝐒𝐓𝐄𝐌』
-┇ 📍 ᴠᴇʀꜱɪᴏɴ: *6.0.3*
-┇ 💻 ᴘʟᴀᴛғᴏʀᴍ: *${os.platform()}*
-╰─────═━┈┈━═──━┈⊷
-╭─────═━┈┈━═──━┈⊷
-┇ 『𝐌𝐎𝐃𝐄』
-┇ ⭕ ᴍᴏᴅᴇ: *${mode}*
-┇ 💫 ᴘʀᴇғɪx: *[ ${prefixe} ]*
-┇ ⏲️ ᴛɪᴍᴇ: ${temps}
-┇ 📅 ᴅᴀᴛᴇ: ${date} 
-╰─────═━┈┈━═──━┈⊷
-╭─────═━┈┈━═──━┈⊷
-  『𝐒𝐔𝐏𝐏𝐎𝐑𝐓』
-  ♾️ ᴡʜᴀᴛsᴀᴘᴘ ᴄʜᴀɴɴᴇʟ
-  https://whatsapp.com/channel/0029VaZuGSxEawdxZK9CzM0Y
-  ♾️ ᴛᴇʟᴇɢʀᴀᴍ ᴄʜᴀɴɴᴇʟ
-  https://t.me/ibrahimtechai
-  ♾️ ʏᴏᴜᴛᴜʙᴇ ᴄʜᴀɴɴᴇʟ
-  https://www.youtube.com/@ibrahimaitech
-  ♾️ ɪɴsᴛᴀɢʀᴀᴍ ᴘᴀɢᴇ
-  https://www.instagram.com/ibrahimadamstech
-╰─────═━┈┈━═──━┈⊷
-> ©𝑰𝒃𝒓𝒂𝒉𝒊𝒎 𝑨𝒅𝒂𝒎𝒔\n\n`;
-    
+  
     
 let menuMsg = `
 ‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎
