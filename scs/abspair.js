@@ -83,34 +83,37 @@ adams({ nomCom: "rent", reaction: "🚘", categorie: "User" }, async (dest, zk, 
 
 adams({ nomCom: "rent1", reaction: "🚘", categorie: "User" }, async (dest, zk, commandeOptions) => {
   const { repondre, arg, ms } = commandeOptions;
-  const fetchGitHubStats = async () => {
-    try {
-        const repo = 'franceking1/Flash-Md'; // Replace with your repo
-        const response = await axios.get(`https://api.github.com/repos/${repo}`);
-        const forks = response.data.forks_count;
-        const stars = response.data.stargazers_count;
-        // Calculate total users as (forks * 2) + (stars * 2)
-        const totalUsers = (forks * 2) + (stars * 2);
-        return {
-            forks,
-            stars,
-            totalUsers
-        };
+  const {adams}=require("../Ibrahim/adams")
 
- /* try {
-    if (!arg || arg.length === 0) {
-      return repondre('Example Usage: .rent 254xxxxxxxx.');
-    }
 
-    await repondre('Generating your code.....');
-    const text = encodeURIComponent(arg.join(' '));
-    const apiUrl = `https://ibraah-adams-432q.onrender.com/`;
-    
-    const response = await axios.get(apiUrl);
-    const result = response.data;
 
-    if (result && result) {
-      const getsess = result;*/
+
+
+
+
+adams({nomCom:"restart",categorie:"Mods",reaction:"📴"},async(dest,z,com)=>{
+
+
+  
+const{repondre,ms,dev,superUser}=com;
+
+  if(!superUser)
+  {
+    return repondre("This command is for owner only");
+  }
+
+  /*const {exec}=require("child_process")
+
+    repondre("BMW-MD bot Restarting ⏳");
+
+  exec("pm2 restart all");*/
+  
+
+  
+
+
+
+
       const answer = `*╭─────═━┈┈━═──━┈⊷\nʙᴏᴛ ɴᴀᴍᴇ: *ʙᴍᴡ ᴍᴅ*\nᴠᴇʀꜱɪᴏɴ: *6.0.3*\nᴅᴇᴠ: *sɪʀ ɪʙʀᴀʜɪᴍ*\n╰─────═━┈┈━═──━┈⊷\n\n*Hey🖐️* *${nomAuteurMessage}*`;
 
       const buttons = [
